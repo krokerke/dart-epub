@@ -48,8 +48,16 @@ class EpubBookRef {
     return _epubArchive;
   }
 
+  List<EpubChapterRef> getChaptersSync() {
+    return ChapterReader.getChapters(this);
+  }
+
   Future<List<EpubChapterRef>> getChapters() async {
     return await ChapterReader.getChapters(this);
+  }
+
+  Image readCoverSync() {
+    return BookCoverReader.readBookCoverSync(this);
   }
 
   Future<Image> readCover() async {

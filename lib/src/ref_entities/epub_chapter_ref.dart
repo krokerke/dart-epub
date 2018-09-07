@@ -38,6 +38,10 @@ class EpubChapterRef {
         collections.listsEqual(SubChapters, otherAs.SubChapters);
   }
 
+  String readHtmlContentSync() {
+    return epubTextContentFileRef.readContentAsTextSync();
+  }
+
   Future<String> readHtmlContent() async {
     return epubTextContentFileRef.readContentAsText();
   }
